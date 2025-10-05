@@ -421,7 +421,7 @@ def visualize_pupil_centers(csv_file, pattern, x_min=250, x_max=350, y_min=185, 
 
     plt.xlabel('X Coordinate (px)')
     plt.ylabel('Y Coordinate (px)')
-    plt.title('Scatter Plot of Pupil Centers')
+    plt.title(f"{pattern}: Scatter Plot of Pupil Centers")
     plt.legend()
     plt.show()
 
