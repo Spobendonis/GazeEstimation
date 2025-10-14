@@ -467,11 +467,12 @@ def gen_data_subject(test_subject, trial):
     D = []
     p = ['grid', 'circle', 'line', 'random']
     for f in p:
+        path = f + "/frames"
         D.append({
-            f"pupils_train": create_pupil_data(load_csv(test_subject, trial, f, 'mean_pupil_coordinates')),
-            f"pupils_test": create_pupil_data(load_csv(test_subject, trial, f, 'mean_pupil_coordinates')),
-            f"screen_coordinates_train": create_position_data_collection(load_csv(test_subject,trial, f, 'screen_coordinates')),
-            f"screen_coordinates_test": create_position_data_collection(load_csv(test_subject, trial, f, 'screen_coordinates')),
+            f"pupils_train": create_pupil_data(load_csv(test_subject, trial, path, 'pupil_coordinates')),
+            f"pupils_test": create_pupil_data(load_csv(test_subject, trial, path, 'pupil_coordinates')),
+            #f"screen_coordinates_train": create_position_data_collection(load_csv(test_subject,trial, f, 'fixation_coords')),
+            #f"screen_coordinates_test": create_position_data_collection(load_csv(test_subject, trial, f, 'fixation_coords')),
         })
     return D
 
